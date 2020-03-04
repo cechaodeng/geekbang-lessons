@@ -34,21 +34,21 @@ import java.util.Map;
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
  * @since
  */
-@Configuration
+//@Configuration
 public class AnnotationApplicationContextAsIoCContainerDemo {
 
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 将当前类 AnnotationApplicationContextAsIoCContainerDemo 作为配置类（Configuration Class）
-        applicationContext.register(AnnotationApplicationContextAsIoCContainerDemo.class);
+        applicationContext.register(AnnotationApplicationContextAsIoCContainerDemo.class);//等于类上的@Configuration
         // 启动应用上下文
         applicationContext.refresh();
         // 依赖查找集合对象
         lookupCollectionByType(applicationContext);
 
         // 关闭应用上下文
-        applicationContext.close();
+//        applicationContext.close();
 
     }
 
